@@ -54,6 +54,7 @@ node{
     }
     stage('Kubernetes Deployment'){
         echo 'Pushing the docker image to kubernetes cluster'
+        sh "kubectl get nodes"
         sh "sudo kubectl apply -f deployment.yaml"
         sh "sudo kubectl get all"
         
