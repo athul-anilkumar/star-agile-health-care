@@ -47,6 +47,7 @@ node{
         sh "${dockerCMD} push athulanil/medical_assignment_repo:${tagName}"
             
         }
+    }
         
     stage('Configure and Deploy to the test-server'){
         ansiblePlaybook become: true, credentialsId: 'ansible-key', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible-playbook.yml'
